@@ -17,6 +17,9 @@ resources:
     cpu: 100m
     memory: 128Mi
 
+service:
+  type: LoadBalancer
+  port: 22
 
 # Additional volumes on the output Deployment definition.
 volumes: 
@@ -40,4 +43,4 @@ volumeMounts:
 
 
 # Add the corresponding public key here to be added to pod's authorized_keys
-authorized_keys: {}
+authorized_keys: ""
