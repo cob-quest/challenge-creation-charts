@@ -82,7 +82,7 @@ autoscaling:
 volumes: 
   - name: ssh-volume
     configMap:
-      name: ssh-config
+      name: ssh-config-{{ .Release.Name }}
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: 
