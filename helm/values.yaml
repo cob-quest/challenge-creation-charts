@@ -79,10 +79,10 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes: 
-  - name: ssh-volume
-    configMap:
-      name: ssh-config-{{ .Release.Name }}
+# volumes: 
+#   - name: ssh-volume
+#     configMap:
+#       name: "ssh-config-{{ .Release.Name }}"
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: 
