@@ -5,6 +5,7 @@
 replicaCount: 1
 
 image:
+  registry: registry.gitlab.com
   repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
@@ -95,6 +96,14 @@ volumeMounts:
   - name: ssh-volume
     subPath: authorized_keys
     mountPath: /home/workshop/.ssh/authorized_keys
+  # - name: env-secret
+  #   mountPath: "/etc/.env"
+  #   subPath: .env
+  
+# volumes:
+# - name: env-secret
+#   secret:
+#     secretName: env-secret
 
 nodeSelector: {}
 
