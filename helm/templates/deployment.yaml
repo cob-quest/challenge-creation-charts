@@ -58,6 +58,10 @@ spec:
           env:
             {{- toYaml . | nindent 12}}
           {{- end }}
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "printenv | grep PLATFORM >> /etc/environment && printenv | grep TOKEN >> /etc/environment"]
       volumes:
         - name: ssh-volume
           configMap:
